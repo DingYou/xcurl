@@ -24,4 +24,6 @@ fn main() {
         .expect("execute failed");
     let output_str = String::from_utf8_lossy(&out.stdout);
     println!("{}", output_str);
+    let ouput_err = String::from_utf8_lossy(&out.stderr);
+    println!("{}", ouput_err);
 }
