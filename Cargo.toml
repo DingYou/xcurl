@@ -1,6 +1,6 @@
 [package]
 name = "xcurl"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["DingYou <dingyou@yimian.com.cn>"]
 edition = "2021"
 
