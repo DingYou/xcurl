@@ -28,13 +28,12 @@ pub fn load_config() -> Config {
     };
 
     let reader = BufReader::new(file);
-    let conf: Config = match serde_json::from_reader(reader) {
+    match serde_json::from_reader(reader) {
         Ok(conf) => conf,
         Err(e) => {
             panic!("read err, {}", e);
         }
-    };
-    return conf;
+    }
 }
 
 fn get_config_path() -> PathBuf {
