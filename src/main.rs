@@ -2,7 +2,6 @@ mod config;
 
 use crate::config::load_config;
 use std::env;
-use std::mem;
 use std::process::Command;
 
 fn main() {
