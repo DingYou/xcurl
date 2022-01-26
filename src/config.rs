@@ -40,12 +40,14 @@ fn get_config_path() -> PathBuf {
     // find conf.json in ., ${xcurl}/,  ~/.xcurl/
     let current_path = env::current_dir().unwrap();
     let current_path_conf = current_path.with_file_name("conf.json");
+    println!("check current config: {}", current_path_conf.display());
     if current_path_conf.exists() {
         return current_path_conf;
     }
 
     let current_exe_path = env::current_exe().unwrap();
     let current_exe_path_conf = current_exe_path.with_file_name("conf.json");
+    println!("check exe config: {}", current_exe_path_conf.display());
     if current_exe_path_conf.exists() {
         return current_exe_path_conf;
     }
@@ -54,6 +56,7 @@ fn get_config_path() -> PathBuf {
     let mut home_path_conf = PathBuf::from(home);
     home_path_conf.push(".xcurl");
     home_path_conf.push("conf.json");
+    println!("check home config: {}", home_path_conf.display());
     if home_path_conf.exists() {
         return home_path_conf;
     }
