@@ -9,10 +9,8 @@ fn main() {
     let mut args = env::args();
     args.next();
     let args = args.map(|mut a| -> String {
-        if a.starts_with("-") {
-            return a;
-        }
-        if a.starts_with("'http") || a.starts_with("\"http") || a.starts_with("http") {
+        if !a.starts_with("-")
+            && (a.starts_with("'http") || a.starts_with("\"http") || a.starts_with("http")) {
             println!("original url: {}", a);
             conf.replaces
                 .iter()
